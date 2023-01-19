@@ -1,0 +1,150 @@
+#! /bin/bash
+
+# bare git repo alias for dotfiles
+alias dotgit='/usr/bin/git --git-dir=$HOME/.dotgit --work-tree=$HOME'
+alias dotgit-tree='dotgit ls-tree -r main --name-only'
+
+######### Buku
+
+alias b='buku --suggest'
+# add url in clipboard to buku database
+alias ba="buku_add"
+alias bu="buku_upd"
+
+######### Git
+
+alias g="git"
+alias gst="git status"
+alias gco="git checkout"
+alias gc="git commit"
+alias ga="git add"
+alias gi="git add -i"
+alias gaa="git add ."
+alias gl="git log --graph --oneline --all --decorate"
+
+######### Divers
+
+# alias nvim="lvim"
+alias n="nvim"
+
+# open emacs with empty buffer
+alias e="emacsclient -c"
+
+# alias sbcl="rlwrap /usr/bin/sbcl"
+
+alias h="history"
+
+alias cls="clear"
+
+# Refresh all the dotfiles!
+alias rebash="source ~/.bashrc; echo '.dotfiles have been refreshed!'"
+
+# Always show line numbers and highlight matches in grep
+alias grep="grep --colour=auto -i"
+
+# Enable aliases to be sudo'ed
+alias sudo="sudo "
+
+# Get week number
+alias week='date +%V'
+
+# Stopwatch
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+
+# Better PATH printing
+alias pathy="env | grep path | sed 's/:/\n/g' | sort | uniq"
+
+# Better less
+# -F: quit if one screen
+# -R: preserve colour
+# -X: don't clear the screen
+alias less="less -FRX"
+
+######### Files/Directories
+
+alias n3="nnn -cErQx"		# start nnn filemanager
+
+alias r="source ranger"	 # start ranger filemanager / on exit stay in cwd
+
+alias l="ls -lF"   # List files in long format
+
+# List all files in long format, including dot files
+alias ll="ls -ahlF"
+
+# List only directories (excellent alias name)
+alias lsd="ls -lF | grep --color=never '^d'"
+
+# List files/directories by human readable size (requires coreutils)
+alias sizes="du -ahd1 | sort -h"
+
+alias df='df -h'                          # human-readable sizes
+
+alias free='free -m'                      # show sizes in MB
+
+alias cp="cp -i"                          # confirm before overwriting something
+
+alias cpg="advcp -g"											# cp with progress bar
+
+alias mvg="advmv -g"											# mv with progress bar
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+######### Netwerk
+
+# alias ip="ifconfig getifaddr en0"
+
+# extern IP adres
+alias extip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+# Ping Google to quickly test connection issues
+alias pg="ping -c 4 www.google.com"
+
+######### Docker
+
+# Shorten docker
+#alias dk="docker"
+
+# Shorten docker-machine
+#alias dm="docker-machine"
+
+# Shorten docker-compose
+#alias dc="docker-compose"
+
+# Alias to delete all docker containers
+#alias drac="docker rm -f \$(docker ps -q -f status=exited)"
+
+# Alias to delete all docker images
+#alias drai="docker rmi \$(docker images -q)"
+
+# Alias to show docker stats by container name
+#alias dstats="docker stats \$(docker ps --format \"{{.Names}}\" | sort)"
+
+# More readable docker ps
+#alias dps="docker ps --format \"table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}\""
+
+# Default ctop to only show running containers
+#alias ctop="ctop -a"
+
+######### Pip
+
+# Upgrade pip
+alias pipup="pip install --upgrade pip"
+
+# pip install alias
+alias pi="pip install -U"
+
+# Search pip installed packages
+alias pipgrep="pip freeze | grep"
+
+# Uninstall all pip packages
+alias pipclean="pip freeze | grep -v \"github\" | xargs pip uninstall -y"
+
+# Install common Python utils
+alias pyhelp="pip install --upgrade flake8 ipdb ipython jupyter pdir2 ptpython pudb show"
+
