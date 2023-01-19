@@ -1,0 +1,17 @@
+require("core.setup.colorscheme")
+require("core.setup.cmp")
+require("core.setup.treesitter")
+require("core.setup.telescope")
+require("core.setup.lsp")
+require("core.setup.lualine")
+require("core.setup.autopairs")
+require("core.setup.project")
+require("core.setup.toggleterm")
+require("core.setup.undotree")
+require("core.setup.vimwiki")
+require("core.setup.gitsigns")
+require("core.setup.comment")
+require("core.setup.indent_blanklines")
+require("core.setup.markdown_preview")
+
+-- vim: ts=2 sts=2 sw=2 et
