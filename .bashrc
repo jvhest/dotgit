@@ -95,7 +95,7 @@ fi
 unset use_color safe_term match_lhs sh
 
 # Load the shell dotfiles:
-for file in ~/.{bash_aliases,bash_functions}; do
+for file in ~/.{bash_alias,bash_functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
