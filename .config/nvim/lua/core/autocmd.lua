@@ -17,6 +17,7 @@ autocmd(
 )
 -- trim trailing spaces
 autocmd("BufWritePre", {
+	pattern = "*",
 	callback = vim.fn["my#trim_trailing_spaces"],
 	group = trimWhiteSpaceGrp,
 })

@@ -30,8 +30,17 @@ lfcd () {
 
 
 # https://github.com/donnemartin/dev-setup/blob/master/.bash_profile
-#
 
+
+function show_color_table() {
+    $ i=0;
+    for j in {1..16}; do
+        for k in {1..16}; do
+            printf "\e[1;48;05;${i}m %03d \e[0m" $i; i=$((i+1));
+        done;
+        echo;
+    done
+}
 
 # Create a new directory and enter it
 function mkd() {
@@ -74,7 +83,7 @@ function targz() {
 function pass-one() {
     if [[ -z "$@" ]]; then
         echo " pass-one <password-name> - extract first line"
-        return 1; 
+        return 1;
     fi
     pass show "$@" | sed -n '1p'
 }

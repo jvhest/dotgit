@@ -9,7 +9,7 @@ M.trim_trailing_spaces = function()
 			return nil
 		end
 	end
-	vim.cmd([[:%s/s+$//e]])
+	vim.cmd([[%s/\s\+$//e]])
 end
 
 M.block_messages = function(search_text)
